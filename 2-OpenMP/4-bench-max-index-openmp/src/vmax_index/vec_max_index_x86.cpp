@@ -63,36 +63,7 @@ int vec_max_index_omp(
         const float* __restrict src,
         const int               length)
 {
-    float maxv = -FLT_MAX;
-    int index  =        0;
-#pragma omp parallel
-    {
-        int  priv_index =        0;
-        float priv_maxv = -FLT_MAX;
 
-#pragma omp for
-        for (int i = 0; i < length; i+= 1)
-        {
-            if( src[i] > priv_maxv )
-            {
-                priv_maxv  = src[i];
-                priv_index = i;
-            }
-        }
-
-#pragma omp critical 
-        {
-            if(priv_maxv > maxv) {
-                maxv  = priv_maxv;
-                index = priv_index;
-            }else if( (priv_maxv == maxv) && (priv_index < index) ) {
-                maxv  = priv_maxv;
-                index = priv_index;
-            }
-        }
-
-    }
-    return index;
 };
 /*
  *

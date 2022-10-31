@@ -82,16 +82,9 @@ void vec_add_unroll (
 #if defined (__clang__)
     #pragma clang loop vectorize(disable)
 #endif
-    for (int i = 0; i < length; i+= 8)
+    for (int i = 0; i < length; i+= 1)
     {
        dst[i  ] = src_1[i  ] + src_2[i  ];
-       dst[i+1] = src_1[i+1] + src_2[i+1];
-       dst[i+2] = src_1[i+2] + src_2[i+2];
-       dst[i+3] = src_1[i+3] + src_2[i+3];
-       dst[i+4] = src_1[i+4] + src_2[i+4];
-       dst[i+5] = src_1[i+5] + src_2[i+5];
-       dst[i+6] = src_1[i+6] + src_2[i+6];
-       dst[i+7] = src_1[i+7] + src_2[i+7];
     }
 }
 /*

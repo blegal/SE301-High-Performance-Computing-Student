@@ -66,7 +66,7 @@ Open the file CMakeLists.txt
 Replace the flag **O0** present in the line by the flag **O1** :
 
 ```
-SET (CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wall -O0 -g0 -std=c++17")
+SET (CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wall -O0 -g0")
 ```
 
 Recompile your program and restart the measurement of the execution time of the different functions.

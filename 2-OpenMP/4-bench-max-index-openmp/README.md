@@ -2,9 +2,7 @@
  
 ## OpenMP experiments
 
-OpenMP experiments
-
-Stage 4 - Let's complexify a bit
+### Stage 4 - Let's complexify a bit
 
 It is not always possible to use OpenMP features without modifying the source code of the functions to be optimized. Indeed, the pragma available in the language allow to cover many use cases but not all :-)
 

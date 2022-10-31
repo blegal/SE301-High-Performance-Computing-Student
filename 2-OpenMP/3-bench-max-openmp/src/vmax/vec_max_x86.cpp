@@ -58,23 +58,7 @@ float vec_max_omp(
         const float* __restrict src,
         const int               length)
 {
-    float maxv = -FLT_MAX;
-#pragma omp parallel
-    {
-        float priv_maxv = -FLT_MAX;
 
-#pragma omp for
-        for (int i = 0; i < length; i+= 1)
-        {
-            priv_maxv = std::fmax(src[i], priv_maxv);
-        }
-
-#pragma omp critical 
-        {
-            maxv = std::fmax(maxv, priv_maxv);
-        }
-    }
-    return maxv;
 };
 /*
  *

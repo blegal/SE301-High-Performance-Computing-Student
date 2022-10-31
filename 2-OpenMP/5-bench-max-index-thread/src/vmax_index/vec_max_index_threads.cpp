@@ -92,57 +92,7 @@ int vec_max_index_threads(
         const int               length,
         const int               nThreads)
 {
-    float         priv_maxv[nThreads];
-    int           priv_idx [nThreads];
 
-    int step = length / nThreads;
-
-    std::thread t [nThreads];
-
-    //
-    // On cree les thread qui sont automatiquement lancés
-    //
-
-    for (int i = 0; i < length; i += step)
-    {
-        t[i/step] = std::thread(
-            thread_vec_max_index, src,
-            i, i + step,
-            priv_maxv + (i/step),     // PAS de passage par REF sinon std::ref()
-            priv_idx  + (i/step)      // PAS de passage par REF sinon std::ref()
-            );
-    }
-
-    //
-    // On attend que tous les threads aient terminé
-    //
-
-    for (int i = 0; i < nThreads; ++i)
-    {
-        t[i].join();
-    }
-
-    //
-    // On fait la fusion des résultats
-    //
-
-    float maxv = priv_maxv[0];
-    int index  = priv_idx [0];
-    for (int i = 1; i < nThreads; ++i)
-    {
-        if(priv_maxv[i] > maxv)
-        {
-            maxv  = priv_maxv[i];
-            index = priv_idx [i];
-        }
-        else if( (priv_maxv[i] == maxv) && (priv_idx[i] < index) )
-        {
-            maxv  = priv_maxv[i];
-            index = priv_idx [i];
-        }
-    }
-
-    return index;
 };
 /*
  *

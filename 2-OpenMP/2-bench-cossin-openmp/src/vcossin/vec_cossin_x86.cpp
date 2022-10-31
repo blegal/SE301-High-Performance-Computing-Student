@@ -61,16 +61,7 @@ void vec_cossin_omp(
         const float* __restrict src_2,
         const int               length)
 {
-#pragma omp parallel
-    {
-#pragma omp for
-        for (int i = 0; i < length; i+= 1)
-        {
-            const float cosA = cosf(src_1[i]);
-            const float sinB = sinf(src_2[i]);
-            dst[i] = std::sqrt( (cosA * cosA) + (sinB * sinB) );
-        }
-    }
+
 };
 /*
  *

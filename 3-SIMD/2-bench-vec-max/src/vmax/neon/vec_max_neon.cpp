@@ -36,39 +36,7 @@ float vec_max_neon(
         const float* __restrict src,
         const int               length)
 {
-    const int simd  = sizeof(float32x4_t) / sizeof(float);
-    const int first = length & ~(simd - 1);
 
-    //
-    // processing the data set 4 elements by 4 elements
-    // 
-    float32x4_t maxvalues  = vld1q_f32(src);
-
-    for(int x = simd; x < first; x += simd)
-    {
-        const float32x4_t a = vld1q_f32(src + x);
-        maxvalues           = vmaxq_f32(a, maxvalues);
-    }
-
-    float   varray [4];
-    vst1q_f32(values_array,  maxvalues);
-
-    //
-    // On finit la réduction des maxs
-    //
-
-    float max1 =  std::fmax( varray[0], varray[1]);
-    float max2 =  std::fmax( varray[2], varray[3]);
-    float maxv =  std::fmax(      max1,      max2);
-
-    //
-    // On finit la fin de la réduction en mode scalaire
-    //
-    for (int i = first; i < length; i+= 1)
-    {   
-        maxv = std::fmax( maxv, src[i]);
-    }
-    return maxv;
 };
 /*
  *

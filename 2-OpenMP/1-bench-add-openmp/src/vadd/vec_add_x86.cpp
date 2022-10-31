@@ -58,14 +58,7 @@ void vec_add_omp(
         const float* __restrict src_2,
         const int               length)
 {
-#pragma omp parallel
-    {
-#pragma omp for
-        for (int i = 0; i < length; i+= 1)
-        {
-            dst[i] = src_1[i] + src_2[i];
-        }
-    }
+
 };
 /*
  *
