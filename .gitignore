@@ -1,0 +1,69 @@
+# Prerequisites
+*.d
+
+# Compiled Object files
+*.slo
+*.lo
+*.o
+*.obj
+
+# Precompiled Headers
+*.gch
+*.pch
+
+# Compiled Dynamic libraries
+*.so
+*.dylib
+*.dll
+
+# Fortran module files
+*.mod
+*.smod
+
+# Compiled Static libraries
+*.lai
+*.la
+*.a
+*.lib
+
+# Executables
+*.exe
+*.out
+*.app
+.DS_Store
+
+# MacOS files
+
+.vscode/settings.json
+
+# Useless directories
+
+1-CPU/2-help-compiler/build/*
+1-CPU/1-bench/build/*
+1-CPU/2-cache/build/*
+1-CPU/4-cache-perfs-again/build/*
+1-CPU/5-branch-prediction/build/*
+
+2-OpenMP/1-bench-add-openmp/build/*
+2-OpenMP/2-bench-cossin-openmp/build/*
+2-OpenMP/3-bench-max-openmp/build/*
+2-OpenMP/4-bench-max-index-openmp/build/*
+2-OpenMP/5-bench-max-index-thread/build/*
+
+3-SIMD/1-bench/build/*
+3-SIMD/2-custom/build/*
+3-SIMD/3-custom/build/*
+
+4-Metal/1-bench/bin/*
+4-Metal/1-bench-vec-add/bin/*
+4-Metal/2-bench-vec-cossin/bin/*
+4-Metal/3-custom-max/bin/*
+4-Metal/4-custom-max-index/bin/*
+
+3-SIMD/3-bench-vec-max-index/build/*
+3-SIMD/1-bench-vec-add/build/*
+3-SIMD/2-bench-vec-max/build/*
+
+5-Metal/4-custom-max-index/bin/*
+2-OpenMP/1-bench-add-openmp/README.md
+4-CUDA/3-custom-max-nvidia.zip
