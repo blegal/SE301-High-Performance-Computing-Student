@@ -102,13 +102,10 @@ float vec_sum_unroll(
 #if defined (__clang__)
     #pragma clang loop vectorize(disable)
 #endif
-    for (int i = 0; i < length; i+= 8)
+    for (int i = 0; i < length; i+= 1)
     {
-       float a1 = src_1[i + 0] + src_1[ i + 1];
-       float a2 = src_1[i + 2] + src_1[ i + 3];
-       float a3 = src_1[i + 4] + src_1[ i + 5];
-       float a4 = src_1[i + 6] + src_1[ i + 7];
-       accu    += (a1 + a2) + (a3 + a4);
+       float a = src_1[i];
+       accu   += a;
     }
     return accu;
 }
