@@ -8,7 +8,7 @@ In this part, we will make the computation function more complex in order to get
 
 In this example we will be interested in the implementation of the following function:
 
-C[i] = sqrt( cos(A[i]) ^ 2 + cos(B[i]) ^ 2 )
+C[i] = sqrt( cos(A[i]) ^ 2 + sin(B[i]) ^ 2 )
 
 
 The necessary environment for the performance evaluation is provided as before. However, from now on you will start writing code!
