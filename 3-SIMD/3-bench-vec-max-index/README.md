@@ -14,6 +14,4 @@ To push yourself a bit further, you will now have to write a function that allow
 
 4 - Analyze the results obtained.
 
-If you have not become masters of SIMD programming, you have understood the basic concepts. You will not have experienced all the subtleties of the thousands of instructions available, nor tested entire data formats, but you should have enough knowledge to speed up our galaxy collision application.
-
-However, before you tackle this application, there is one last step to take.
+Let's process a final example before moving to CUDA implementation.
