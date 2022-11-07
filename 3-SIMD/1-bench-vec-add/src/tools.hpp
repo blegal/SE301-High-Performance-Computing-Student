@@ -63,20 +63,20 @@ inline void uint8_t_show(const __m256i reg)
     printf("\n");
 }
 #endif
-
+/*
 #ifdef __SSE4_2__
 inline void uint8_t_show(const __m128i reg)
 {
     uint8_t tmp[sizeof(__m128i)];
     _mm_storeu_si128 ( (__m128i *) tmp, reg);
-    for(uint32_t i=0; i<sizeof(__m128i); i++)
+    for(int i=0; i<(int)sizeof(__m128i); i++)
     {
         if( (i%4 == 0) && (i != 0) ) printf("| ");
         printf("%3d ", tmp[sizeof(__m128i)-1-i]);
     }
     printf("\n");
 }
-#endif
+#endif*/
 
 inline void int8_t_show(const int8_t* ptr)
 {
