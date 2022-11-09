@@ -63,7 +63,7 @@ inline void uint8_t_show(const __m256i reg)
     printf("\n");
 }
 #endif
-
+/*
 #ifdef __SSE4_2__
 inline void uint8_t_show(const __m128i reg)
 {
@@ -76,7 +76,7 @@ inline void uint8_t_show(const __m128i reg)
     }
     printf("\n");
 }
-#endif
+#endif*/
 
 inline void int8_t_show(const int8_t* ptr)
 {
