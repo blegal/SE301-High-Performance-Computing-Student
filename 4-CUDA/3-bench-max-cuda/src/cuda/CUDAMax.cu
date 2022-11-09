@@ -10,6 +10,8 @@ A class to manage all of the Metal objects this app creates.
 
 #include "CUDAMax.hpp"
 #include <iostream>
+#include <cuda_runtime.h>
+#include "helper/helper_cuda.h"
 
 const int threadsPerBlock = 256;
 

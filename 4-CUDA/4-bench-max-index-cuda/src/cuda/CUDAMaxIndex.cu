@@ -10,8 +10,9 @@ A class to manage all of the Metal objects this app creates.
 
 #include "CUDAMaxIndex.hpp"
 #include <iostream>
-
-const int threadsPerBlock = 256;
+#include <cuda_runtime.h>
+#include "helper/helper_cuda.h"
+const int threadsPerBlock = 256; // impact the kernel description !!!
 
 CUDAMaxIndex::CUDAMaxIndex(const int elements)
 {

@@ -1,17 +1,25 @@
+GCC       = g++
 NVCC      = nvcc
-CFLAGS    = -Xcompiler "-fopenmp -Ofast -march=native -mtune=native -std=c++11"
-NVCCFLAGS = -I$(CUDAPATH)/include
-LDFLAGS   =-L$(CUDAPATH)/lib -lcuda -lcudart -lm -Xcompiler -fopenmp -lgomp
 
-CUDAPATH = /usr/local/cuda
+# GCC
+CFLAGS    = -I/usr/include/cuda -std=c++11 -Xcompiler "-Ofast -march=native -mtune=native -std=c++11 -fopenmp"
+NVCCFLAGS = -I$(CUDAPATH)/include
+
+# NVIDIA
+CPPFLAGS  = -std=c++11 -Xcompiler "-Ofast -march=native -mtune=native -std=c++11 -fopenmp"
+
+# LINKER
+LDFLAGS   = -L/usr/lib64 -L$(CUDAPATH)/lib -lcuda -lm -Xcompiler -fopenmp -lgomp
+
+CUDAPATH  = /usr/local/cuda
 BUILD_DIR = build
 
 EXEC = main
 
 SRC=./src/cuda/kernel/vec_cossin.cu   \
     ./src/cuda/CUDACosSin.cu   \
-    ./src/vcossin/vec_cossin_x86.cu \
-    ./src/main.cu
+    ./src/vcossin/vec_cossin_x86.cpp \
+    ./src/main.cpp
 
 # this is mac only. only linux system, remove -Xlinker and add in -lGL -lGLUT?
 
@@ -24,6 +32,9 @@ main: $(OBJ)
 
 %.o: %.cu
 	$(NVCC) $(NVCCFLAGS) $(CFLAGS) -o $@ -c $<
+
+%.o: %.cpp
+	$(GCC) $(CPPFLAGS) -o $@ -c $<
 
 .PHONY: clean mrproper
 

@@ -1,5 +1,7 @@
 #include "CUDACosSin.hpp"
 #include <iostream>
+#include <cuda_runtime.h>
+#include "helper/helper_cuda.h"
 
 CUDACosSin::CUDACosSin(const int elements)
 {

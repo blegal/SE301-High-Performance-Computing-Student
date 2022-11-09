@@ -1,6 +1,6 @@
 #pragma once
-#include <cuda_runtime.h>
-#include "helper/helper_cuda.h"
+#include <cstdio>
+#include <cstdlib>
 
 class CUDAAdder
 {

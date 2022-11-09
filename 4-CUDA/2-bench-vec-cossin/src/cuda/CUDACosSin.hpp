@@ -1,6 +1,4 @@
 #pragma once
-#include <cuda_runtime.h>
-#include "helper/helper_cuda.h"
 
 class CUDACosSin
 {

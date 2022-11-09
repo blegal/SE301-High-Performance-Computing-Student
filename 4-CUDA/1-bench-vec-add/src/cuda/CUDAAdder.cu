@@ -1,5 +1,7 @@
 #include "CUDAAdder.hpp"
 #include <iostream>
+#include <cuda_runtime.h>
+#include "helper/helper_cuda.h"
 
 CUDAAdder::CUDAAdder(const int elements)
 {
