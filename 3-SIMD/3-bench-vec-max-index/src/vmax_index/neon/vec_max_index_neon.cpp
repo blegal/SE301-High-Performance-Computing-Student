@@ -38,7 +38,7 @@ int vec_max_index_neon(
         const float* __restrict src,
         const int               length)
 {
-
+        return 0;
 }
 /*
  *

@@ -29,7 +29,7 @@ float vec_max_sse4(
         const float* __restrict src,
         const int               length)
 {
-
+        return 0;
 };
 /*
  *

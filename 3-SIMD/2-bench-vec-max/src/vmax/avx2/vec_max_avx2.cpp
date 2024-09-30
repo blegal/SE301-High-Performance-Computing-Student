@@ -28,7 +28,7 @@ float vec_max_avx2(
         const float* __restrict src,
         const int               length)
 {
-
+        return 0;
 };
 /*
  *
